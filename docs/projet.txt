@@ -1,0 +1,110 @@
+currentGame = new Game(10,10,0.9,0.9,4);
+----------------------------------
+this.board:
+Object { height: 10, width: 10, grid: Array[10], 
+isSuitableForWeapon: Board/this.isSuitableForWeapon(pos),
+ isSuitableForPlayer: Board/this.isSuitableForPlayer(pos),
+ putWeaponOnBoard: Board/this.putWeaponOnBoard(id, pos),
+ movePlayerOnBoard: Board/this.movePlayerOnBoard(id, lastPos, newPos),
+ toggleTriggerArround: Board/this.toggleTriggerArround(pos), 
+checkPlayerMovementOptions: Board/this.checkPlayerMovementOptions(pos, range) }
+
+this.board.grid: Array[10]:
+Array [ Array[10], Array[10], Array[10], Array[10],
+ Array[10], Array[10], Array[10], Array[10], Array[10], Array[10] ]
+
+this.board.grid[0]
+Array [ Object, Object, Object, Object, Object, Object, Object, Object, Object, Object ]
+
+this.board.grid[0][0]
+Object { row: 0, col: 0, triggerCombat: false, weaponOnCell: 0, 
+playerOnCell: 0, accessible: true, toggleTrigger: Cell/this.toggleTrigger() }
+
+baseWeapons:
+Array [ Object, Object ]
+baseWeapons[0]
+Object { id: 1, name: "Mitraillette Verte", damages: 10, position: 0,
+ initializePositionOnPlayer: Weapon/this.initializePositionOnPlayer(player), initializePositionOnBoard: Weapon/this.initializePositionOnBoard(board) }
+baseWeapons[1]
+Object { id: 2, name: "Mitraillette Jaune", damages: 10, position: 0,
+ initializePositionOnPlayer: Weapon/this.initializePositionOnPlayer(player), initializePositionOnBoard: Weapon/this.initializePositionOnBoard(board) }
+
+
+bonusWeapons:
+Array [ Object, Object, Object, Object ]
+bonusWeapons[0]
+Object { id: 3, name: "Sabre", damages: 15, position: 0,
+ initializePositionOnPlayer: Weapon/this.initializePositionOnPlayer(player), initializePositionOnBoard: Weapon/this.initializePositionOnBoard(board) }
+bonusWeapons[1]
+Object { id: 4, name: "Faucille", damages: 5, position: 0, 
+initializePositionOnPlayer: Weapon/this.initializePositionOnPlayer(player), initializePositionOnBoard: Weapon/this.initializePositionOnBoard(board) }
+bonusWeapons[2]
+Object { id: 5, name: "Arc", damages: 20, position: 0, initializePositionOnPlayer: Weapon/this.initializePositionOnPlayer(player), initializePositionOnBoard: Weapon/this.initializePositionOnBoard(board) }
+bonusWeapons[3]
+Object { id: 6, name: "Pistolet", damages: 10, position: 0, initializePositionOnPlayer: Weapon/this.initializePositionOnPlayer(player), initializePositionOnBoard: Weapon/this.initializePositionOnBoard(board) }
+
+bonusWeapons
+Array [ Object, Object, Object, Object ]
+bonusWeapons[weapon]
+Object { id: 4, name: "Faucille", damages: 5, position: Array[2], initializePositionOnPlayer: Weapon/this.initializePositionOnPlayer(player), initializePositionOnBoard: Weapon/this.initializePositionOnBoard(board) }
+
+game.board:
+Object { height: 10, width: 10, grid: Array[10], isSuitableForWeapon: Board/this.isSuitableForWeapon(pos),
+ isSuitableForPlayer: Board/this.isSuitableForPlayer(pos), putWeaponOnBoard: Board/this.putWeaponOnBoard(id, pos), movePlayerOnBoard: Board/this.movePlayerOnBoard(id, lastPos, newPos), toggleTriggerArround: Board/this.toggleTriggerArround(pos), checkPlayerMovementOptions: Board/this.checkPlayerMovementOptions(pos, range) }
+
+
+affichage board:
+$board
+Object { 0: <div#board>, length: 1, context: HTMLDocument ? index.html, selector: "#board" }
+$row
+Object [ <div.row> ]
+boucle sur j: j=0 j<10
+$cell
+Object [ <div.cell> ]
+$cell
+Object [ <div#cell-0-0.cell> ]
+$cell
+Object [ <div#cell-0-0.cell.cell-accessible> ]
+
+ajout des row au board:
+$row.appendTo($board);
+
+$cell
+Object [ <div#cell-1-9.cell.cell-accessible> ]
+
+
+-----------------------------
+currentGame
+Object { board: Object, players: Array[2], weapons: Array[6], switchPlayerWeapon: Game/this.switchPlayerWeapon(pos, player), 
+currentPlayer: Object, continueMovementPhase: true, getNextPlayer: Game/this.getNextPlayer(), setNextPlayer: Game/this.setNextPlayer(), nextMovementTurn: Game/this.nextMovementTurn(),
+ makeMovementTurn: Game/this.makeMovementTurn(event), 3 de plus… }
+
+----------------------------------
+this.nextmovementTurn:
+this.continueMovementPhase
+true
+this.currentPlayer.position
+Array [ 0, 5 ]
+this.currentPlayer.movement
+3 /* nbre de deplacements*/
+
+var  movementOptions = this.board.checkPlayerMovementOptions(this.currentPlayer.position, this.currentPlayer.movement);
+exemple:
+pos
+Array [ 7, 8 ]
+range
+3
+--------------------------------
+var top=pos[0]-1
+movementOptions
+Array [ Array[2], Array[2], Array[2] ]
+	movementOptions[0]
+Array [ 6, 8 ]
+	movementOptions[1]
+Array [ 5, 8 ]
+	movementOptions[2]
+Array [ 4, 8 ]
+
+-----------------------------
+bottom = pos[0] + 1
+8

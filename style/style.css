@@ -1,0 +1,187 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background-color : #C8C8C8;
+}
+
+#son {
+	background:none;
+	position:absolute;
+	top:20px;
+	left:5px;
+}
+
+#board {
+	width: 700px;
+	height: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+    border:solid black 2px;
+}
+
+.row {
+	width: 700px;
+	height: 70px;
+	margin: 0px;
+}
+
+.cell {
+	display:inline-block;
+	box-sizing:border-box;
+    border: solid #000000 1px; 
+	height: 70px;
+	width: 70px;
+	margin: 0px;
+}
+
+.cell-accessible {
+	background-color: beige;
+}
+
+.cell-inaccessible {
+	background-color: dimgrey;
+    border-radius: 10px;
+    border: 3px black groove;
+}
+
+.cell-movement {
+	 background-color: #FFF561;
+}
+
+#game-controls {
+	width: 1100px;
+	height: 200px;
+	text-align: center;
+	margin-top: 5px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.player-controls {
+	width: 250px;
+	heigt:100px;
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+}
+
+.player-name {
+	width: 220px;
+	height: 35px;
+	text-align: center;
+	margin: 0px 15px 0px 15px;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+.player-status {
+	width: 250px;
+	height: 75px;
+	margin: 0px;
+	text-align: left;
+}
+
+.player-weapon-icon {
+	display:inline-block;
+	vertical-align: top;
+	box-sizing:border-box;
+	border: solid #000000 1px;
+	height: 70px;
+	width: 70px;
+	margin: 0px;
+}
+
+.player-text-info {
+	display: inline-block;
+	vertical-align: top;
+	width: 175px;
+	height: 70px;
+	margin: 0px;
+}
+
+.player-hp {
+	height: 20px;
+	margin: 0px 0px 5px 2px;
+    font-family: Helvetica, Arial, sans-serif;
+	
+}
+
+.player-weapon-specs {
+	height: 45px;
+    font-family: Helvetica, Arial, sans-serif;
+	
+}
+
+#control-buttons {
+	width: 100px;
+	display: inline-block;
+	vertical-align:central;	
+    
+}
+
+#control-buttons button {
+    background-color: gray;
+}
+
+#combat-buttons {
+	width: 390px;
+	display: inline-block;
+	vertical-align: top;  
+}
+
+#combat-buttons button {
+	width: 150px;
+	height: 150px;
+    background-color: white;
+}
+
+.cell-weapon1 {
+	background-image:url(../images/weapon-1.png);
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+.cell-weapon2 {
+	background-image:url(../images/weapon-2.png);
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+.cell-weapon3 {
+	background-image:url(../images/weapon-3.png);
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+.cell-weapon4 {
+	background-image:url(../images/weapon-4.png);
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+.cell-weapon5 {
+	background-image:url(../images/weapon-5.png);
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+.cell-weapon6 {
+	background-image:url(../images/weapon-6.png);
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+.cell-player1 {
+	background-color:#FFF7A3;
+	background-image:url(../images/player1.png);
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+.cell-player2 {
+	background-color:#FFF7A3;
+	background-image:url(../images/player2.png);
+	background-repeat:no-repeat;
+	background-position:center;
+}

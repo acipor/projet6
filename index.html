@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <noscript><meta http-equiv="refresh" content="0; URL=javascript.html"></noscript> <!-- test si javascript activé !-->
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="style/style.css">
+        <title>Jeu de plateau tour par tour</title>
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> 
+    </head>
+    
+    <body>
+        
+        <button type="button" id="son"><img  id="imgson" src="images/haut_parleur.png" title="Cliquer sur le bouton pour désactiver/activer le son" alt="son" /></button>
+			<audio preload="auto" class="ambiance" autoplay="autoplay" loop="loop">
+				<source src="audio/sample_jeu.mp3" type="audio/mp3">
+				<source src="audio/sample_jeu.ogg" type="audio/ogg">
+			</audio>
+        
+        <div id="board"> 
+        </div>
+            
+        <div id="game-controls">
+            <div id="player1-controls" class="player-controls">
+                
+                 <div class="player-name"><h1>Joueur 1</h1></div>
+                
+                 <img src="images/player1.png"  alt="player1">
+                
+                <div class="player-status">
+                    <div class="player-weapon-icon"></div>
+                    <div class="player-text-info">
+                        <div class="player-hp"></div>
+                        <div class="player-weapon-specs"></div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        	<div id="control-buttons">
+                <button type="button" name="playGame">Nouvelle Partie</button>
+            </div>
+            
+            <div id="combat-buttons">
+                <button type="button" name="attack">Attaquer</button>
+                <button type="button" name="defense">Défendre</button>
+            </div>
+            
+            <div id="player2-controls" class="player-controls">
+                
+            <div class="player-name"><h1>Joueur 2</h1></div>
+                
+             <img src="images/player2.png"  alt="player2">    
+                
+            <div class="player-status">
+            	<div class="player-weapon-icon"></div>
+                <div class="player-text-info">
+                        <div class="player-hp"></div>
+                        <div class="player-weapon-specs"></div>
+                    </div>
+            </div>
+                
+            </div>
+        </div>
+        
+        
+        
+      <!--  <script type="text/javascript" src="js/jquery.js"></script> !-->
+
+        <script type="text/javascript" src="js/audio.js"></script>
+
+        <script type="text/javascript" src="js/classes/cell.js"></script> 
+
+        <script type="text/javascript" src="js/classes/board.js"></script> 
+
+        <script type="text/javascript" src="js/classes/weapon.js"></script> 
+                
+        <script type="text/javascript" src="js/classes/player.js"></script>
+        
+        <script type="text/javascript" src="js/classes/game.js"></script> 
+        
+        <script type="text/javascript" src="js/main.js"></script> 
+        
+    </body>
+</html>

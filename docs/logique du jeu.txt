@@ -1,0 +1,40 @@
+currentGame = new Game(10,10,0.9,0.9,4)
+---->function game(10,10,0.9,0.9,4)
+------>this.board = new Board(10, 10, 0.9);
+----------> class board: function Board(10,10,0.9)
+----------> class players :this.players = [new Player(1, baseWeapons[0], this.board), new Player(2, baseWeapons[1], this.board)]
+----------> class weapons : this.weapons = baseWeapons.concat(bonusWeapons)
+
+
+displayGame(currentGame)
+------>displayBoard(game.board) // affichage du board utilisation de board.grid
+-----> displayPlayer(game.players[player]) //afichage des joueurs
+       displayHP(game.players[player]) //affichage des santes
+----->displayWeapon(game.weapons[weapon]) // affichage des armes
+
+
+currentGame.nextMovementTurn()
+si continueMovementPhase = true
+--var movementOptions = this.board.checkPlayerMovementOptions(this.currentPlayer.position, this.currentPlayer.movement)
+// this.currentPlayer.position // tableau de la position du joueur Array [ 0, 5 ] par exmeple
+// this.currentPlayer.movement =3 /* deplacement 3 cases maximum */
+--> checkPlayerMovementOptions ( function(pos, range) return movementOptions) // retourne un Array [ Array[2], Array[2], Array[2] ] de positions accessibles par le joueur courant 
+----->setupMovementOptions(movementOptions) 
+-------> function setupMovementOptions(movementOptions) {
+	currentMovements = movementOptions;
+	for (option in currentMovements) {
+		$("#cell-" + currentMovements[option][0] + "-" + currentMovements[option][1]).bind("click", {row: currentMovements[option][0], col: currentMovements[option][1]}, currentGame.makeMovementTurn);
+		toggleMovement(currentMovements[option]); // affichage de la cellule 
+	}
+}
+----->makeMovementTurn = function(event)
+currentGame.currentPlayer.makeMovement(pos, currentGame.board) // 
+unsetMovementOptions(movementOptions)
+
+si continueMovementPhase = true
+-- nextCombatTurn() // combat
+
+
+
+
+
